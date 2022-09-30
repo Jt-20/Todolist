@@ -1,0 +1,36 @@
+<%- include('header') -%>
+
+
+    <!-- <% if(todday==="Weekend ,i.e, Sunday"){ %>
+        <h1 style="color: blue;">It's a <%= todday %>! </h1>
+    <% }else{%>
+        <h1 style="color: purple;">It's a <%= todday %>! </h1>
+    <% }%> -->
+    <div class="box" id="heading">
+        <h1>
+            <%= todday %>
+        </h1>
+    </div>
+
+    <div class="box">
+        <% naaya.forEach(function(item){ %>
+        
+            <form action="/delete" method = "post">
+                <div class="item">
+                    <input type="checkbox" name= "checkbox" value="<%=item._id%>" onchange="this.form.submit()">
+                    <p class="p">
+                        <%=item.name%>
+                    </p>
+                </div>
+                <input type="hidden" name="tot" value=<%= todday %>>
+            </form>
+        
+        <% }) %>
+                
+                <form action="/" method="post" class="item">
+                    <input type="text" name="neww" placeholder="Add more" autocomplete="off">
+                    <button type="submit" name="button" value=<%=todday %>>+</button>
+                </form>
+    </div>
+
+    <%- include('footer') -%>
