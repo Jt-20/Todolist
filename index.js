@@ -9,7 +9,7 @@ const _ = require("lodash");
 
 const app = exp();
 
-mong.connect("mongodb://localhost:27017/todolistDB",{useNewUrlParser: true})
+mong.connect("mongodb://127.0.0.1:27017/todolistDB",{useNewUrlParser: true})
 
 const itemschema = mong.Schema({
     name: String
